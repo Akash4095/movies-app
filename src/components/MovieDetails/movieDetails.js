@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchAsyncMovieOrShowDetails, getSelectedMovieOrShows, removeSelectedMOvieOrShow } from '../../redux/moviesReducer/movieSlice';
+import { fetchAsyncMovieOrShowDetails, getSelectedMovieOrShows, removeSelectedMOvieOrShow, removeSelectedMovieOrShow } from '../../redux/moviesReducer/movieSlice';
 import { Icon } from 'semantic-ui-react';
 import "./movieDetails.scss"
 
@@ -16,7 +16,7 @@ const MovieDetails = () => {
     useEffect(() => {
         dispatch(fetchAsyncMovieOrShowDetails(imdbID))
         return () => {
-            dispatch(removeSelectedMOvieOrShow())
+            dispatch(removeSelectedMovieOrShow())
         }
     }, [dispatch, imdbID])
 
@@ -31,16 +31,16 @@ const MovieDetails = () => {
                             </div>
                             <div className='movie-rating'>
                                 <span>
-                                    IMDB Rating <Icon name='star' color="orange">{data.imdbRating}</Icon>
+                                    IMDB Rating <i class="fa fa-star">{data.imdbRating}</i>
                                 </span>
                                 <span>
-                                    IMDB Votes <Icon name='thumbs up' color="green">{data.imdbVotes}</Icon>
+                                    IMDB Votes  <i class="fa fa-thumbs-up">{data.imdbVotes}</i>
                                 </span>
                                 <span>
-                                    Runtime <Icon name='film' color="grey">{data.Runtime}</Icon>
+                                    Runtime  <i class="fa fa-film">{data.Runtime}</i>
                                 </span>
                                 <span>
-                                    Year <Icon name='calendar' color="grey">{data.Year}</Icon>
+                                    Year  <i class="fa fa-calendar">{data.Year}</i>
                                 </span>
                             </div>
                             <div className='movie-plot'>

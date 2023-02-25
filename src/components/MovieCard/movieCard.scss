@@ -3,6 +3,9 @@
 .card-item {
   background: $secondary-color;
   cursor: pointer;
+  min-height: 450px;
+  height: 100%;
+  margin: 10px;
   transition: all .3s;
   &:hover{
     transform: scale(1.1);

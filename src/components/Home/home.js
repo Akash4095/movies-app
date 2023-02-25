@@ -6,9 +6,12 @@ import { addMovies, fetchAsyncMovies, fetchAsyncShows } from '../../redux/movies
 const Home = () => {
   const dispatch = useDispatch()
 
+  const movieText = "Mission"
+  const showText = "Friends"
+
   useEffect(() => {
-    dispatch(fetchAsyncMovies())
-    dispatch(fetchAsyncShows())
+    dispatch(fetchAsyncMovies(movieText))
+    dispatch(fetchAsyncShows(showText))
   }, [dispatch])
   return (
     <div>
